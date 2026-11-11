@@ -1,0 +1,86 @@
+# 个人交易所代理规则。域名后缀包含本域与所有子域。
+# 仅用于分流，不是登录导航或官方身份认证。来源与等级见 SOURCES.md。
+
+# Gate：主域、官方 SDK API 域
+DOMAIN-SUFFIX,gate.com
+DOMAIN-SUFFIX,gate.io
+DOMAIN-SUFFIX,gateio.ws
+# Gate：备用页面与页面引用资源
+DOMAIN-SUFFIX,gate.ac
+DOMAIN-SUFFIX,gateimg.com
+DOMAIN-SUFFIX,gimg2.staticimgs.com
+DOMAIN-SUFFIX,icon.staticimgs.com
+# Gate：同源证书关联的备用/接口域，未取得官方公告
+DOMAIN-SUFFIX,gate51.club
+DOMAIN-SUFFIX,studiotv.net
+
+# MEXC：官网前端配置列出的主站、区域与备用域
+DOMAIN-SUFFIX,mexc.com
+DOMAIN-SUFFIX,mexc.co
+DOMAIN-SUFFIX,mexc.fm
+DOMAIN-SUFFIX,mexc.ge
+DOMAIN-SUFFIX,mexc.in
+DOMAIN-SUFFIX,mexc.kr
+DOMAIN-SUFFIX,mexc.ae
+DOMAIN-SUFFIX,mexc.cl
+DOMAIN-SUFFIX,mexc.ee
+DOMAIN-SUFFIX,mexc.io
+DOMAIN-SUFFIX,mexc.cc
+DOMAIN-SUFFIX,mexccex.com
+DOMAIN-SUFFIX,mexcsite.com
+DOMAIN-SUFFIX,mx-exchange.co
+DOMAIN-SUFFIX,greentreeone.com
+DOMAIN-SUFFIX,365huo.xyz
+DOMAIN-SUFFIX,flytogarden.com
+DOMAIN-SUFFIX,mcaketech.com
+DOMAIN-SUFFIX,hotbookzone.com
+DOMAIN-SUFFIX,alookzone.com
+DOMAIN-SUFFIX,payapptoday.com
+DOMAIN-SUFFIX,weappnet.com
+DOMAIN-SUFFIX,linkappmarketing.com
+DOMAIN-SUFFIX,getappnet.com
+DOMAIN-SUFFIX,cryptolinkapp.com
+DOMAIN-SUFFIX,atomupre.com
+DOMAIN-SUFFIX,getgogoto.com
+DOMAIN-SUFFIX,ddjhe.com
+DOMAIN-SUFFIX,hottreeswim.ru
+DOMAIN-SUFFIX,coldbookfly.ru
+# MEXC：官网页面配置引用的静态资源域
+DOMAIN-SUFFIX,mocortech.com
+
+# Bybit：主站、荷兰至欧洲跳转与官方 API 文档中的区域域名
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,bybit.nl
+DOMAIN-SUFFIX,bybit.eu
+DOMAIN-SUFFIX,bytick.com
+DOMAIN-SUFFIX,bybit.tr
+DOMAIN-SUFFIX,bybit.kz
+DOMAIN-SUFFIX,bybitgeorgia.ge
+DOMAIN-SUFFIX,bybit.ae
+DOMAIN-SUFFIX,bybit.id
+# Bybit：v2fly 社区追踪的备用域，非官方公告，部分可能已停用
+DOMAIN-SUFFIX,bycsi.com
+DOMAIN-SUFFIX,byapis.com
+DOMAIN-SUFFIX,bycbe.com
+DOMAIN-SUFFIX,bymj.io
+DOMAIN-SUFFIX,byabcde.com
+DOMAIN-SUFFIX,byapps.net
+DOMAIN-SUFFIX,byd3c3.com
+DOMAIN-SUFFIX,bybit.biz
+DOMAIN-SUFFIX,bybdc6.com
+DOMAIN-SUFFIX,bybit-global.com
+DOMAIN-SUFFIX,bybit.cloud
+DOMAIN-SUFFIX,bybitglobal.com
+
+# Bitget：官网 hreflang / 页面资源引用
+DOMAIN-SUFFIX,bitget.com
+DOMAIN-SUFFIX,bitget.site
+DOMAIN-SUFFIX,bitgetapp.com
+DOMAIN-SUFFIX,bitgetapps.com
+DOMAIN-SUFFIX,bgbstatic.com
+# Bitget：跳转观测、第三方 CCXT 源码线索，非官方公告
+DOMAIN-SUFFIX,krbitget.com
+DOMAIN-SUFFIX,bitget.cc
+
+# Bitfinex：主站、API、文档和支持子域
+DOMAIN-SUFFIX,bitfinex.com
