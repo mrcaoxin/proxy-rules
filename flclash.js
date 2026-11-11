@@ -1,4 +1,3 @@
-// 首次发布检查：GitHub Actions 将规范此生成文件。
 // 由 scripts/build.mjs 生成。请编辑 rules/exchanges.list。
 function main(config) {
   const groupName = '个人交易所代理';
