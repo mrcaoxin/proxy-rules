@@ -25,10 +25,10 @@ jobs:
       - run: node --test tests/*.test.*
       - name: 保存生成的脚本
         run: |
-          if ! git diff --quiet -- flclash.js; then
+          git add -- flclash.js
+          if ! git diff --cached --quiet -- flclash.js; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add flclash.js
             git commit -m 'build: update exchange rules script'
             git push
           fi

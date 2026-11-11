@@ -1,6 +1,6 @@
 # 域名来源与核实程度
 
-核查日期：2026-11-12（本机日期）。当前启用 69 条域名后缀：Gate 9、MEXC 31、Bybit 21、Bitget 7、Bitfinex 1。用户最初提供的 22 个域名全部保留。
+核查日期：2026-11-12（本机日期）。当前启用 73 条域名后缀：Gate 13、MEXC 31、Bybit 21、Bitget 7、Bitfinex 1。用户最初提供的 22 个域名全部保留。
 
 本文件记录代理匹配的依据，不是登录网址导航。官网引用、页面跳转、证书关联和社区维护是不同等级的证据，均不能保证域名未来仍归同一方、当前可用或适合登录。没有将搜索结果里自称“官网”的推广/SEO 域名直接加入规则。
 
@@ -12,7 +12,7 @@
 | `gateio.ws` | [Gate 官方 Python SDK 配置](https://github.com/gateio/gateapi-python/blob/master/gate_api/configuration.py) 的默认基址为 `https://api.gateio.ws/api/v4`；[时间接口](https://api.gateio.ws/api/v4/spot/time) 本次返回 JSON。根域规则覆盖 API、合约和 WebSocket 子域。 |
 | `gate.ac` | [实际页面](https://www.gate.ac/) 返回 Gate 前端，引用 `www.gate.com`、`web3.gate.com` 等；社区 [Crypto.list](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Crypto/Crypto.list) 也收录。属于页面/社区证据，未取得官方公告。 |
 | `gateimg.com`、`gimg2.staticimgs.com`、`icon.staticimgs.com` | `www.gate.ac` 页面引用的图片/图标资源。对 `staticimgs.com` 仅匹配观察到的两个主机及其子域，未把整个共享根域加入。 |
-| `gate51.club`、`studiotv.net` | 证书透明度记录中，`www.gate.io`、`*.gate51.club` 与 `api-normal-g2.studiotv.net` 等同时出现在证书 SAN。属于技术关联，未取得官方页面公告。 |
+| `gate51.club`；`api-normal-g2.studiotv.net`、`api-normal-g5.studiotv.net`、`spotws-normal-g2.studiotv.net`、`fxws-normal-g2.studiotv.net`、`wsapp-spot-g2.studiotv.net` | 证书透明度记录中与 `www.gate.io` 同证书的备用域/接口主机。属于技术关联，未取得官方页面公告。对 `studiotv.net` 仅匹配观察到的具体接口主机，未启用整个根域。 |
 
 证书线索可从 [CertSpotter：gate51.club](https://api.certspotter.com/v1/issuances?domain=gate51.club&include_subdomains=true&expand=dns_names) 复核；本次记录 ID 为 `17192407682`。共享证书是关联线索，不能单独当作登录安全证明。
 

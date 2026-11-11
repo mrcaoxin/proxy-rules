@@ -12,7 +12,11 @@ DOMAIN-SUFFIX,gimg2.staticimgs.com
 DOMAIN-SUFFIX,icon.staticimgs.com
 # Gate：同源证书关联的备用/接口域，未取得官方公告
 DOMAIN-SUFFIX,gate51.club
-DOMAIN-SUFFIX,studiotv.net
+DOMAIN-SUFFIX,api-normal-g2.studiotv.net
+DOMAIN-SUFFIX,api-normal-g5.studiotv.net
+DOMAIN-SUFFIX,spotws-normal-g2.studiotv.net
+DOMAIN-SUFFIX,fxws-normal-g2.studiotv.net
+DOMAIN-SUFFIX,wsapp-spot-g2.studiotv.net
 
 # MEXC：官网前端配置列出的主站、区域与备用域
 DOMAIN-SUFFIX,mexc.com
