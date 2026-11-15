@@ -1,4 +1,4 @@
-# 个人交易所代理规则。域名后缀包含本域与所有子域。
+# 个人交易所代理规则。DOMAIN-SUFFIX 包含本域及子域；DOMAIN 仅匹配指定主机。
 # 仅用于分流，不是登录导航或官方身份认证。来源与等级见 SOURCES.md。
 
 # Gate：主域、官方 SDK API 域
@@ -17,6 +17,34 @@ DOMAIN-SUFFIX,api-normal-g5.studiotv.net
 DOMAIN-SUFFIX,spotws-normal-g2.studiotv.net
 DOMAIN-SUFFIX,fxws-normal-g2.studiotv.net
 DOMAIN-SUFFIX,wsapp-spot-g2.studiotv.net
+# Gate：用户 Google Play App 的进程连接记录确认使用的具体主机
+DOMAIN,app-fx-ws.bxjddjt.com
+DOMAIN,api-normal-v2.xtwlps.com
+DOMAIN,app.studiotv.net
+DOMAIN,api.ldd678.com
+# Gate：社区 App 接口/资源清单；未取得逐项官方公告
+DOMAIN-SUFFIX,gateio.io
+DOMAIN-SUFFIX,gateio.im
+DOMAIN-SUFFIX,gateio.services
+DOMAIN,app-spot-ws.csrqoa.com
+DOMAIN,app.csrqoa.com
+DOMAIN,app-fx-api.csrqoa.com
+DOMAIN,app-spot-ws.zhaqby.com
+DOMAIN,app.zhaqby.com
+DOMAIN,app-fx-api.zhaqby.com
+DOMAIN,app-spot-ws.panpno.com
+DOMAIN,app.panpno.com
+DOMAIN,app-fx-api.panpno.com
+DOMAIN,orig-app-spot-ws.bitstreamonline.net
+DOMAIN,app-spot-ws.wzchjq.com
+DOMAIN,app.wzchjq.com
+DOMAIN,app-fx-api.wzchjq.com
+DOMAIN,app.smartappnet.net
+DOMAIN,fx-appapi.gateio.live
+DOMAIN,snssdk.gatedata.org
+DOMAIN,query.gatedns.net
+DOMAIN,social.gposts.net
+DOMAIN-SUFFIX,gatedataimg.com
 
 # MEXC：官网前端配置列出的主站、区域与备用域
 DOMAIN-SUFFIX,mexc.com
@@ -75,6 +103,18 @@ DOMAIN-SUFFIX,bybdc6.com
 DOMAIN-SUFFIX,bybit-global.com
 DOMAIN-SUFFIX,bybit.cloud
 DOMAIN-SUFFIX,bybitglobal.com
+# Bybit：官方开发文档的日本/香港正式与测试 API，仅匹配文档列出的主机
+DOMAIN,api.manepa.jp
+DOMAIN,api-testnet.manepa.jp
+DOMAIN,api.spark-fintech.com
+DOMAIN,api-testnet.spark-fintech.com
+# Bybit：官网 data-core 脚本引用的统计主机；datasink 同时见用户 App 连接
+DOMAIN,sc-abtest.ffe390afd658c19dcbf707e0597b846d.de
+DOMAIN,sc-datasink.ffbbbdc6d3c353211fe2ba39c9f744cd.com
+DOMAIN,sc-web.ffe390afd658c19dcbf707e0597b846d.de
+# Bybit：用户进程记录确认的纯 IP 目标；不表示 IP 为 Bybit 独占
+IP-CIDR,43.135.121.179/32,no-resolve
+IP-CIDR,43.154.61.67/32,no-resolve
 
 # Bitget：官网 hreflang / 页面资源引用
 DOMAIN-SUFFIX,bitget.com
@@ -88,3 +128,60 @@ DOMAIN-SUFFIX,bitget.cc
 
 # Bitfinex：主站、API、文档和支持子域
 DOMAIN-SUFFIX,bitfinex.com
+
+# OKX：官方开发文档、地区 REST / WS / 模拟盘与官网 CDN 配置
+DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,okx.ac
+DOMAIN-SUFFIX,okx.cab
+DOMAIN-SUFFIX,okx.reise
+# OKX：官网配置明确列出的共享资源具体主机
+DOMAIN,static.coinall.ltd
+DOMAIN,static.jingyunyilian.com
+# OKX：v2fly 社区的历史品牌与 DNS 备用域，未取得逐项官方公告
+DOMAIN-SUFFIX,okex.com
+DOMAIN-SUFFIX,okx-dns.com
+DOMAIN-SUFFIX,okx-dns1.com
+DOMAIN-SUFFIX,okx-dns2.com
+
+# Binance：官方 API / WS / FIX / SBE、行情数据、官网与静态资源
+DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,binance.vision
+DOMAIN-SUFFIX,binance.info
+DOMAIN-SUFFIX,bnbstatic.com
+# Binance：官方 SDK 的合约测试网；美国独立实体的 API 文档
+DOMAIN-SUFFIX,binancefuture.com
+DOMAIN-SUFFIX,binance.us
+# Binance：v2fly 社区备用/接口域，非逐项官方认证，部分可能已停用
+DOMAIN-SUFFIX,binance.cc
+DOMAIN-SUFFIX,binance.cloud
+DOMAIN-SUFFIX,binance.co
+DOMAIN-SUFFIX,binance.me
+DOMAIN-SUFFIX,binance.net
+DOMAIN-SUFFIX,binancecnt.com
+DOMAIN-SUFFIX,binancezh.be
+DOMAIN-SUFFIX,binancezh.biz
+DOMAIN-SUFFIX,binancezh.cc
+DOMAIN-SUFFIX,binancezh.co
+DOMAIN-SUFFIX,binancezh.com
+DOMAIN-SUFFIX,binancezh.info
+DOMAIN-SUFFIX,binancezh.ink
+DOMAIN-SUFFIX,binancezh.kim
+DOMAIN-SUFFIX,binancezh.link
+DOMAIN-SUFFIX,binancezh.live
+DOMAIN-SUFFIX,binancezh.mobi
+DOMAIN-SUFFIX,binancezh.net
+DOMAIN-SUFFIX,binancezh.pro
+DOMAIN-SUFFIX,binancezh.sh
+DOMAIN-SUFFIX,binancezh.top
+DOMAIN-SUFFIX,binanceapi.com
+DOMAIN-SUFFIX,binanceru.net
+DOMAIN-SUFFIX,bmwweb.solutions
+DOMAIN-SUFFIX,bnappweb.black
+DOMAIN-SUFFIX,bntrace.com
+DOMAIN-SUFFIX,bsappapi.cc
+DOMAIN-SUFFIX,bsappapi.com
+DOMAIN-SUFFIX,bscdnweb.com
+DOMAIN-SUFFIX,nftstatic.com
+# Binance：社区记录的 App 专用统计主机，不匹配整个共享服务根域
+DOMAIN,zftksc.cdn-settings.appsflyersdk.com
+DOMAIN,zftksc.launches.appsflyersdk.com

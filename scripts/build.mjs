@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
+import { isIP } from 'node:net';
 import { pathToFileURL } from 'node:url';
 
 export function generate(text) {
@@ -6,12 +7,14 @@ export function generate(text) {
     .filter(line => line && !line.startsWith('#'));
   if (rules.length === 0) throw new Error('规则清单不能为空');
   for (const rule of rules) {
-    const [type, domain, ...extra] = rule.split(',');
-    if (type !== 'DOMAIN-SUFFIX' || extra.length || !domain || domain.length > 253 ||
-        !/\.[a-z]{2,}$/.test(domain) || domain.split('.').some(label =>
-          !/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label))) {
-      throw new Error('无效的域名规则：' + rule);
-    }
+    const [type, value, ...extra] = rule.split(',');
+    const validDomain = (type === 'DOMAIN-SUFFIX' || type === 'DOMAIN') &&
+      extra.length === 0 && value && value.length <= 253 && /\.[a-z]{2,}$/.test(value) &&
+      value.split('.').every(label => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label));
+    const [address, prefix, ...suffix] = (value || '').split('/');
+    const validIP = type === 'IP-CIDR' && extra.length === 1 && extra[0] === 'no-resolve' &&
+      isIP(address) === 4 && prefix === '32' && suffix.length === 0;
+    if (!validDomain && !validIP) throw new Error('无效的规则：' + rule);
   }
   if (new Set(rules).size !== rules.length) throw new Error('规则清单存在重复项');
 
@@ -19,7 +22,17 @@ export function generate(text) {
 function main(config) {
   const groupName = '个人交易所代理';
   const providerName = 'personal-exchanges';
-  const rule = 'RULE-SET,' + providerName + ',' + groupName;
+  const personalRules = [
+    'com.gateio.gateio',
+    'com.mexcpro.client',
+    'com.bybit.app',
+    'com.bitget.exchange',
+    'com.bitfinex.mobileapp',
+    'com.okinc.okex.gp',
+    'com.binance.dev',
+  ].map(name => 'PROCESS-NAME,' + name + ',' + groupName);
+  personalRules.push('RULE-SET,' + providerName + ',' + groupName);
+  config['find-process-mode'] = 'always';
 
   config['proxy-groups'] = config['proxy-groups'] || [];
   if (!config['proxy-groups'].some(group => group.name === groupName)) {
@@ -38,7 +51,7 @@ function main(config) {
     behavior: 'classical',
     payload: ${JSON.stringify(rules, null, 6)},
   };
-  config.rules = [rule].concat((config.rules || []).filter(item => item !== rule));
+  config.rules = personalRules.concat((config.rules || []).filter(item => !personalRules.includes(item)));
   return config;
 }
 `;
